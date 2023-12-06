@@ -1,0 +1,235 @@
+{% load static %}
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coding..</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+nav{
+    /* border: 2px solid red; */
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    box-sizing: border-box;
+    /* background-color: rgb(60, 60, 162); */
+    background-image: linear-gradient(rgb(151, 25, 176) , rgb(46, 46, 150) , rgb(31, 31, 70) );
+    /* background-image: linear-gradient(rgb(31, 31, 70) , rgb(46, 46, 150) , rgb(151, 25, 176) ); */
+
+}
+.nav-elment{
+    /* border:  2px solid rgb(255, 0, 217); */
+    width: 99%;
+    height: 40px;
+    margin-top: 35px;
+    /* z-index; */
+    /* background-color: blue; */
+    /* background-color: rgb(21, 33, 143); */
+
+}
+.nav-img{
+    width:30px ;
+    height: 30px;
+    position: relative;
+    top: 5px;
+    left: 45px;
+}
+.nav-elment span{
+    color: white;
+    position: relative;
+    left: 55px;
+    font-size:17px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.nav-elment span:hover{
+    position: relative;
+    left: 70px;
+    /* font-size: 30px; */
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+.nav-elment a{
+    text-decoration: none;
+}
+
+#logo{
+    width: 60%;
+    height: 140px;
+}
+#navbar-7{
+    height: 150px;
+}
+
+.nav-but{
+    position: relative;
+    left: 55px;
+    border:2px solid transparent;
+    background-color: rgb(6, 6, 72);
+    color: white;
+    border-radius: 10px;
+    height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+
+.darkmode{
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+    color: white;
+}
+main{
+    /* border:  2px solid salmon; */
+    /* width: 200px; */
+    /* height: 100%; */
+    position: absolute;
+    top: 0px;
+    left: 20%;
+    /* display: block; */
+
+}
+#input{
+    width: 900px;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 12px;
+    height: 35px;
+    left: 10px;
+    top: 10px;
+}
+
+.videos{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid rgb(0, 0, 0); */
+    margin-top: 40px;
+}
+iframe{
+    margin-left: 180px;
+}
+h1{
+    text-align: center;
+}
+    </style>
+ </head>
+ <body>
+    <nav>
+
+<div class="nav-elment" id="navbar-1"><img src="{% static 'home.png' %}" class="nav-img" id="navbar-1"><a href=""><span>HOME</span></a></div>
+
+
+<div class="nav-elment" id="navbar-2"><img src="{% static 'codes.png' %}"class="nav-img"  id="navbar-2"><a href="codes" ><span>CODES</span></a></div>
+
+
+<div class="nav-elment" id="navbar-3"><img src="{% static 'password.png' %}" class="nav-img"  id="navbar-3"><a href="login"><span>LOGIN</span></a></div>
+
+
+<div class="nav-elment" id="navbar-4"><img src="{% static 'youtube.png' %}" class="nav-img" , id="navbar-4"><a href="https://www.youtube.com/channel/UCuk3jnvvkKxs4_xxbW3GL5Q"><span>YOUTUBE</span></a></div>
+
+
+<!-- <div class="nav-elment" id="navbar-5"><img src="soon.png" alt="" class="nav-img"><a href=""><span>COMING SOON</span></a></div> -->
+<div class="nav-elment" id="navbar-5"><img src="{% static 'nightmode.png' %}" class="nav-img" id="navbar-5"><button class="nav-but" onclick="dark_light()" id="btn1">Dark-mode</button></div>
+
+
+<div class="nav-elment" id="navbar-7"><img src="{% static 'logo.png' %}" id="logo" , class="nav-img"></div>
+
+    </nav>
+
+    <main>
+<input type="search" name="" id="input" placeholder="search your topic here" onkeyup="search()">
+<!-- <hr> -->
+
+<div class="videos">
+
+<div class="y-videos" id="yv-1"><iframe width="560" height="315" src="https://www.youtube.com/embed/-Y0Pq1z9Hfc?si=5ST2OSFp2jWC_Kf3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h1>Text to sound</h1></div>
+
+
+
+<div class="y-videos" id="yv-2">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NZjyAHR2cAU?si=2hwh1BtA-dADFm7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <h1>face scanner in one minute</h1>
+</div>
+
+
+
+
+</div>
+    </main>
+
+
+
+    <script>
+
+function dark_light() {
+     
+    
+
+     let y = document.body;
+     let btn1= document.getElementById('btn1')
+
+ 
+     if (y.className == "") {
+         y.className = "darkmode";
+         btn1.innerHTML= 'light-mode'
+     }
+     else  if (y.className=="darkmode"){
+         y.className = "";
+         btn1.innerHTML = 'dark-mode'
+     }
+ 
+ }
+// dark_light=()=>{
+//     let bd  = document.body
+//     bd.className = darkmode
+// }
+    </script>
+
+
+<script>
+    
+const search = () =>
+{
+const input = document.getElementById("input").value.toUpperCase();
+// input is store which value we inter in search and convert in upper case
+const product = document.querySelectorAll(".y-videos");
+// product is store all your same class product 
+const innerproduct = document.getElementsByTagName("h1");
+
+// if your product is more than 1 then use for loop 
+
+for( let i = 0; i< innerproduct.length; i++){
+
+let match = product[i].getElementsByTagName("h1")[0]
+// this code means is = first we enter in product and i is use for enter all product and after we enter in tage which live inside the product
+
+if(match){
+
+    let text = match.textContent || match.innerHTML
+    // text store all inner text inside the match 
+    if(text.toUpperCase().indexOf(input) > -1){
+        // if(text.conver text in upper case . indexOf(here write our input))
+        product[i].style.display = ""
+    }
+    else{
+        product[i].style.display = "none";
+    }
+}
+
+}
+
+
+
+}
+
+</script>
+ </body>
+ </html>
